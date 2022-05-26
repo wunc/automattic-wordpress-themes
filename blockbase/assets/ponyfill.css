@@ -373,7 +373,7 @@ input[type=checkbox] + label {
   opacity: 1;
   color: var(--wp--custom--button--color--text);
   background-color: var(--wp--custom--button--color--background);
-  border-color: currentColor;
+  border-color: currentcolor;
   border-color: var(--wp--custom--button--border--color);
 }
 .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):hover svg, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):focus svg, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg,
@@ -399,7 +399,7 @@ input[type=checkbox] + label {
   opacity: 1;
   color: var(--wp--custom--button--color--text);
   background-color: var(--wp--custom--button--color--background);
-  border-color: currentColor;
+  border-color: currentcolor;
 }
 .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):hover, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):focus, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus,
 .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
@@ -414,7 +414,7 @@ input[type=checkbox] + label {
   opacity: 1;
   color: var(--wp--custom--button--color--text);
   background-color: var(--wp--custom--button--color--background);
-  border-color: currentColor;
+  border-color: currentcolor;
   border-color: var(--wp--custom--button--border--color);
 }
 .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):hover svg, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):focus svg, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg,
@@ -869,7 +869,7 @@ div.wp-block-query-pagination .wp-block-query-pagination-numbers .current {
   opacity: 1;
   color: var(--wp--custom--button--color--text);
   background-color: var(--wp--custom--button--color--background);
-  border-color: currentColor;
+  border-color: currentcolor;
   border-radius: var(--wp--custom--button--border--radius);
 }
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button svg,
@@ -886,7 +886,7 @@ div.wp-block-query-pagination .wp-block-query-pagination-numbers .current {
   opacity: 1;
   color: var(--wp--custom--button--color--text);
   background-color: var(--wp--custom--button--color--background);
-  border-color: currentColor;
+  border-color: currentcolor;
   border-color: var(--wp--custom--button--border--color);
 }
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button:not(.has-background):not(.has-text-color):hover svg, .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button:not(.has-background):not(.has-text-color):focus svg, .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button:not(.has-background):not(.has-text-color).has-focus svg,
@@ -937,7 +937,7 @@ p.wp-block-site-tagline {
   opacity: 1;
   color: var(--wp--custom--button--color--text);
   background-color: var(--wp--custom--button--color--background);
-  border-color: currentColor;
+  border-color: currentcolor;
   border-radius: var(--wp--custom--button--border--radius);
   display: inline-block;
 }
@@ -951,7 +951,7 @@ p.wp-block-site-tagline {
   opacity: 1;
   color: var(--wp--custom--button--color--text);
   background-color: var(--wp--custom--button--color--background);
-  border-color: currentColor;
+  border-color: currentcolor;
   border-color: var(--wp--custom--button--border--color);
 }
 .wp-block-file .wp-block-file__button:not(.has-background):not(.has-text-color):hover svg, .wp-block-file .wp-block-file__button:not(.has-background):not(.has-text-color):focus svg, .wp-block-file .wp-block-file__button:not(.has-background):not(.has-text-color).has-focus svg {
