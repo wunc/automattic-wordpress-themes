@@ -1,37 +1,37 @@
-const theme = process.argv[ 2 ];
+const theme = process.argv[2];
 
-if ( ! theme ) {
-	console.error( '\x1b[41m', 'You must specify a theme!' );
+if (!theme) {
+	console.error('\x1b[41m', 'You must specify a theme!');
 	return;
 }
 
-const { Octokit } = require( 'octokit' );
-const octokit = new Octokit( {
+const { Octokit } = require('octokit');
+const octokit = new Octokit({
 	auth: `PUT YOUR ACCESS TOKEN HERE`,
-} );
+});
 
-function sleep( ms ) {
-	return new Promise( ( resolve ) => {
-		setTimeout( resolve, ms );
-	} );
+function sleep(ms) {
+	return new Promise((resolve) => {
+		setTimeout(resolve, ms);
+	});
 }
 
 async function createLabel() {
 	try {
-		await sleep( 1000 );
-		return await octokit.request( 'POST /repos/Automattic/themes/labels', {
+		await sleep(1000);
+		return await octokit.request('POST /repos/Automattic/themes/labels', {
 			name: '[Theme] ' + theme,
 			color: 'c1f4a1',
 			description: 'Automatically generated label for ' + theme + '.',
-		} );
-	} catch ( error ) {
-		console.log( error );
+		});
+	} catch (error) {
+		console.log(error);
 	}
 }
 
 async function createMilestone() {
 	try {
-		await sleep( 1000 );
+		await sleep(1000);
 		return await octokit.request(
 			'POST /repos/Automattic/themes/milestones',
 			{
@@ -40,12 +40,12 @@ async function createMilestone() {
 					'Automatically generated milestone for ' + theme + '.',
 			}
 		);
-	} catch ( error ) {
-		console.error( '\x1b[41m', 'Milestone already created.' );
+	} catch (error) {
+		console.error('\x1b[41m', 'Milestone already created.');
 	}
 }
 
-async function createIssues( milestoneNumber ) {
+async function createIssues(milestoneNumber) {
 	const issues = [
 		'Block Patterns',
 		'Create Base Theme',
@@ -71,14 +71,14 @@ async function createIssues( milestoneNumber ) {
 		'Pre-launch: Showcase Entry',
 		'Pre-launch: Headstart Annotation',
 	];
-	issues.forEach( async ( issue ) => {
+	issues.forEach(async (issue) => {
 		try {
-			await sleep( 1000 );
+			await sleep(1000);
 			return await octokit.request(
 				'POST /repos/Automattic/themes/issues',
 				{
 					title: theme + ': ' + issue,
-					labels: [ '[Theme] ' + theme ],
+					labels: ['[Theme] ' + theme],
 					milestone: milestoneNumber,
 				}
 			);
@@ -86,32 +86,32 @@ async function createIssues( milestoneNumber ) {
 			// .then( ( issueData ) => {
 			// 	addIssueToProject( issueData );
 			// } );
-		} catch ( error ) {
-			console.log( error );
+		} catch (error) {
+			console.log(error);
 		}
-	} );
+	});
 }
 
-async function addIssueToProject( issueData ) {
+async function addIssueToProject(issueData) {
 	try {
-		await sleep( 1000 );
-		return await octokit.request( 'POST /projects/columns/11021541/cards', {
+		await sleep(1000);
+		return await octokit.request('POST /projects/columns/11021541/cards', {
 			note: null,
 			content_id: issueData.data.id,
 			content_url: issueData.data.url,
 			content_type: 'Issue',
 			mediaType: {
-				previews: [ 'inertia' ],
+				previews: ['inertia'],
 			},
-		} );
-	} catch ( error ) {
-		console.log( error );
+		});
+	} catch (error) {
+		console.log(error);
 	}
 }
 
-createLabel().then( () => {
-	createMilestone().then( ( milestoneData ) => {
+createLabel().then(() => {
+	createMilestone().then((milestoneData) => {
 		const milestoneNumber = milestoneData.data.number;
-		createIssues( milestoneNumber );
-	} );
-} );
+		createIssues(milestoneNumber);
+	});
+});
